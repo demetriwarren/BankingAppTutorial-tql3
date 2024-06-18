@@ -17,8 +17,7 @@ public class Account {
 
     public bool Deposit(decimal Amount) {
         if(Amount <= 0) {
-            Console.WriteLine("Amount cannot be zero or negative!");
-            return false;
+            throw new NonPositiveAmountException();
         }
         Balance += Amount;
         return true;
@@ -26,12 +25,10 @@ public class Account {
 
     public bool Withdraw(decimal Amount) {
         if(Amount <= 0) {
-            Console.WriteLine("Amount cannot be zero or negative!");
-            return false;
+            throw new NonPositiveAmountException();
         }
         if(Amount > Balance) {
-            Console.WriteLine("Insufficient Funds!");
-            return false;
+            throw new InsufficientFundsException { Amount = Amount, Balance = Balance };
         }
         Balance -= Amount;
         return true;
