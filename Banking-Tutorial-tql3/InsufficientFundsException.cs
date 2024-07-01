@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Banking_Tutorial_tql3;
 
-internal class InsufficientFundsException : Exception {
+public class InsufficientFundsException : Exception {
 
     public decimal Balance { get; set; }
     public decimal Amount { get; set; }

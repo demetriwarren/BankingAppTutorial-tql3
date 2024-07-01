@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Banking_Tutorial_tql3;
 
-internal class NonPositiveAmountException : Exception {
+public class NonPositiveAmountException : Exception {
 
     public NonPositiveAmountException() : base() { }
 
